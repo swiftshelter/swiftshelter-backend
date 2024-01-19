@@ -9,6 +9,11 @@ dotenv.config();
 // Create an Express application
 const app = express();
 
+// User Routes
+app.use('/api/users', userRoutes);
+app.use('/api/properties', propertyRoutes);
+app.use('/api/payments', paymentRoutes);
+
 // Connect to the database
 // Use prodDB for production and testDB for testing
 connectDB(process.env.NODE_ENV === 'production' ? prodDB : testDB);
